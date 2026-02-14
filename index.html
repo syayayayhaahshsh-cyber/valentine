@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Valentine Story 🤍</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:black;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* STORY INTRO */
+.story{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.glow-name{
+  font-size:45px;
+  color:#ff69b4;
+  text-shadow:0 0 15px #ff69b4, 0 0 30px #ff8fcf;
+  margin-bottom:20px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{text-shadow:0 0 10px #ff69b4;}
+  50%{text-shadow:0 0 30px #ff1493;}
+  100%{text-shadow:0 0 10px #ff69b4;}
+}
+
+.story p{
+  opacity:0;
+  animation:fadeText 2s forwards;
+  margin:10px 0;
+}
+
+.story p:nth-child(2){animation-delay:1s;}
+.story p:nth-child(3){animation-delay:3s;}
+.story p:nth-child(4){animation-delay:5s;}
+.story p:nth-child(5){animation-delay:8s;}
+.story button{margin-top:20px;opacity:0;animation:fadeText 3s forwards 8s;}
+
+@keyframes fadeText{to{opacity:1;}}
+
+/* LETTER */
+.letter-section{
+  display:none;
+  min-height:100vh;
+  padding:40px 20px;
+  background: linear-gradient(-45deg, #ffd6ec, #ffeef7, #ffc0e6, #ffe3f4);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color:#333;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+.letter-box{
+  background:white;
+  max-width:500px;
+  margin:auto;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  position:relative;
+}
+
+.button-container{
+  margin-top:40px;
+  height:200px;
+  position:relative;
+  opacity:0;
+  transition:opacity 0.8s ease;
+}
+
+#yesBtn,#noBtn{
+  padding:14px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  transition:0.3s ease;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+#yesBtn{
+  background:#ff69b4;
+  color:white;
+  left:50%;
+  transform:translate(-120%,-50%);
+}
+
+#noBtn{
+  background:#ddd;
+  left:50%;
+  transform:translate(20%,-50%);
+}
+/* SLIDER */
+.slider-section{
+  display:none;
+  margin-top:50px;
+}
+
+.slider{
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  padding:20px;
+}
+
+.slider img{
+  height:250px;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.slider img:hover{
+  transform:scale(1.05);
+}
+
+/* FALLING HEART */
+.falling-heart{
+  position:fixed;
+  top:-10px;
+  animation:fall linear forwards;
+  pointer-events:none;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  top:-10px;
+  animation:fallConfetti 3s linear forwards;
+}
+
+@keyframes fallConfetti{
+  to{
+    transform:translateY(100vh) rotate(720deg);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="story">
+  <div class="glow-name">Meisya Intan Zahra 🤍</div>
+  <p>30 agustus 2025, pertama kali aku ngechat kamu...</p>
+  <p>itu bukan hari biasa...</p>
+  <p>Karena dihari itulah aku akan mulai mengukir kisah hidup baru yaitu, menjalin hubungan dengan wanita yang sangat aku cintai ini... 🤍</p>
+  <p>kupersembahkan lagu ini untukmu yang selalu sempurna dimataku
+  ...</p>
+  <button onclick="startLetter()">Mulai Lah.. 💌</button>
+</div>
+
+<div class="letter-section" id="letterSection">
+  <div class="letter-box">
+    <h2>Untuk Kamu 💫我的光芒✨</h2>
+    <p id="letterText"></p>
+
+    <div class="button-container">
+      <button id="yesBtn">MAU 🤍</button>
+      <button id="noBtn">TIDAK 😭</button>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="slider-section" id="sliderSection">
+  <h2 style="margin-top:150px;">💥💥💥🌟🌟DANNN INI DIAAA WANITA YANGG AAKUU CINTAAIII🌟🌟💥💥💥</h2>
+  <div class="slider">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto4.jpg">
+    <img src="foto5.jpg">
+    <img src="foto6.jpg">
+    <img src="foto7.jpg">
+    <img src="foto8.jpg">
+    <img src="foto9.jpg">
+    <img src="foto10.jpg">
+    <img src="foto11.jpg">
+    <img src="foto12.jpg"> 
+    <img src="foto13.jpg">
+    <img src="foto14.jpg"> 
+    <img src="foto15.jpg"> 
+    <img src="foto16.jpg"> 
+    <img src="foto17.jpg"> 
+    <img src="foto18.jpg"> 
+    <img src="foto19.jpg"> 
+    <img src="foto20.jpg"> 
+    <img src="foto21.jpg"> 
+    <img src="foto22.jpg"> 
+    <img src="foto23.jpg">
+  </div>
+</div>
+<audio id="music" src="musik.mp3">
+  
+</audio>
+
+<script>
+
+/* START */
+function startLetter(){
+  document.querySelector(".story").style.display="none";
+  document.getElementById("letterSection").style.display="block";
+  document.getElementById("music").play();
+  heartRain();
+
+  const text=`sayangg,maafin sifat sifatku yang sebelumnya yaa?🙁💔 yang selalu ngeluh sama kelakuanmuu🫠🙃😌 dann kayak gapernah ngehargain kelakuan kamuu🥲...dan seolah olah aku lemparin semua bebanku ke kamuu pada saat itu😥😿, aku bener bener cerobohhh,dan menyesall karna udaaa ngelakuin ituuu..,😓 sekalii lagii aku minta maaf yaaa?? hari ini tanggal 🌟💥14FEBRUARI💥🌟 2026 adalah hari 💘valentine💖 yang sangatt spesial dan sangat bahagiaa😼😼, aku berjanji serta akan berusaha untuk merubah semua ini menjadi lebih baikk kedepannya🤞🏻🤞🏻❤️‍🩹,  aku juga inginn kedepannyaa ituu bisa lebih ngertiin dann lebih menerima sifat sifat dan perasaanmu. pokoknya mulai sekarang.. kita komunikasiin semua nya bareng barengg apapunn masalahnyaa okkee??, aku cumaaa inginn kita bahagia di hubungan iniii maka dari ituu untuk membangun dan membentuk hubungan yang bahagia ituu aku berencana melakukan pembentukan dan pembangunan lewat komunikasi secara perlahann, apapun ituuu kayakk.. masalah,kebutuhan kamu/aku di hubungan ini,keinginan,dann harapaann pokoknya harus salingg buka pintu komunikasii okkeey??
+I LOVE YOUU SAYANGG 🫂🫂🤍🤍🤍🤍
+"Kalau duniaku lagi capek,
+kamu itu tempat paling nyaman"
+
+Jadi....
+mau jadi valentine aku? 💖`;
+
+  typeEffect(
+  document.getElementById("letterText"),
+  text,
+  86,
+  function(){
+    document.querySelector(".button-container").style.opacity="1";
+  }
+);
+}
+/* TYPE EFFECT */
+function typeEffect(element,text,speed,callback){
+  let i=0;
+  function typing(){
+    if(i<text.length){
+      element.innerHTML+=text.charAt(i);
+      i++;
+      setTimeout(typing,speed);
+    }else{
+      if(callback) callback();
+    }
+  }
+  typing();
+}
+
+/* HEART RAIN */
+function heartRain(){
+  const hearts=["💖","💕","🤍","💘","✨"];
+  setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="falling-heart";
+    h.innerText=hearts[Math.floor(Math.random()*hearts.length)];
+    h.style.left=Math.random()*100+"%";
+    h.style.fontSize=(15+Math.random()*20)+"px";
+    h.style.animationDuration=(4+Math.random()*3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+  },400);
+}
+
+/* ================= CHAOS BUTTON 20 UNIQUE ================= */
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const container = document.querySelector(".button-container");
+
+let scale = 1;
+
+function randomPos(){
+  const padding = 20;
+
+  const maxX = container.clientWidth - noBtn.offsetWidth - padding;
+  const maxY = container.clientHeight - noBtn.offsetHeight - padding;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+function chaosMove(){
+
+  noBtn.style.transform="";
+  noBtn.style.opacity="1";
+
+  const moves = [
+
+    // 1
+    () => randomPos(),
+
+    // 2
+    () => noBtn.style.transform="rotate(360deg)",
+
+    // 3
+    () => noBtn.style.transform="rotate(720deg)",
+
+    // 4
+    () => noBtn.style.transform="scale(0.6)",
+
+    // 5
+    () => { scale+=0.2; noBtn.style.transform="scale("+scale+")"; },
+
+    // 6
+    () => yesBtn.style.transform="scale(1.5)",
+
+    // 7
+    () => noBtn.style.transform="rotateX(180deg)",
+
+    // 8
+    () => noBtn.style.transform="rotateY(180deg)",
+
+    // 9
+    () => { noBtn.style.opacity="0"; setTimeout(()=>noBtn.style.opacity="1",300); },
+
+    // 10
+    () => noBtn.style.left="0px",
+
+    // 11
+    () => noBtn.style.left=(container.clientWidth-noBtn.offsetWidth)+"px",
+
+    // 12
+    () => noBtn.style.top="0px",
+
+    // 13
+    () => noBtn.style.top=(container.clientHeight-noBtn.offsetHeight)+"px",
+
+    // 14
+    () => noBtn.style.transform="translateY(-40px)",
+
+    // 15
+    () => noBtn.style.transform="translateX(40px)",
+
+    // 16
+    () => noBtn.style.transform="rotate(1080deg)",
+
+    // 17
+    () => noBtn.style.transform="skewX(20deg)",
+
+    // 18
+    () => noBtn.style.transform="skewY(20deg)",
+
+    // 19
+    () => {
+      noBtn.style.background="#ff4d6d";
+      setTimeout(()=>noBtn.style.background="#ddd",300);
+    },
+
+    // 20
+    () => {
+      noBtn.innerText="JANGAN 😭";
+      setTimeout(()=>noBtn.innerText="TIDAK 😭",400);
+    }
+
+  ];
+
+  const randomMove = moves[Math.floor(Math.random()*moves.length)];
+  randomMove();
+}
+
+/* SUPPORT HP */
+noBtn.addEventListener("touchstart", function(e){
+  e.preventDefault();
+  chaosMove();
+});
+
+/* SUPPORT DESKTOP */
+noBtn.addEventListener("mouseenter", chaosMove);
+noBtn.addEventListener("click", chaosMove);
+
+/* YES */
+yesBtn.addEventListener("click",()=>{
+  document.querySelector(".letter-box").innerHTML=`
+    <h1 style="font-size:40px;color:#ff69b4;">Happy Valentine 🤍</h1>
+    <p style="font-size:20px;">aku telah menjadikanmu tujuan hidupku, bukan sekadar pilihan. kamu adalah pusat duniaku, orang yang berjalan bersamaku di setiap langkah, yang menghadapi setiap tantangan bersamaku, dan yang membangun masa depan bersamaku. kamu adalah orang yang memberiku makna sejati dari cinta dan kebahagiaan. setiap momen bersamamu adalah hadiah untukku. aku akan selalu berusaha menjadi versi terbaik untukmu. kamu bukan hanya seseorang yang lewat dalam hidupku, tapi tujuan akhir yang telah lama kuimpikan. aku mencintaimu dengan sepenuh hati, hari ini, besok, dan selamanya. sejak kamu hadir dalam hidupku, banyak hal berubah menjadi lebih baik. kamu datang tanpa diminta, tapi membawa cahaya yang bahkan aku tidak tahu aku perlukan. cara kamu memperlakukanku membuatku merasa dihargai, diperhatikan, dan dicintai. aku merasa lebih dari cukup, lengkap, setiap kali kamu ada di sisiku. hal-hal kecil yang kamu lakukan setiap hari, cara kamu mendengarku tanpa menghakimi, dan cara kamu menenangkan hatiku hanya dengan beberapa kata… semuanya membuatku sadar bahwa cinta tidak selalu harus terdengar keras untuk benar-benar ada. pacarku cantik dan luar biasa, tapi bukan hanya dari luar. kebaikan hatimu dan kecantikanmu lah yang membuatmu benar-benar istimewa. kesabaranmu, ketulusanmu, dan rasa beruntung yang selalu kurasakan setiap kali bersamamu. kamu bukan hanya orang yang aku inginkan, tapi juga orang yang aku butuhkan. kamu adalah temanku yang mau mendengarkan semua ceritaku, tujuan yang selalu aku kembali, dan rumah yang memberi hatiku yang lelah tempat yang aman. terima kasih sudah ada untukku, menjadi cahaya di saat-saat tergelapku. terima kasih sudah menjadi penuntun ketika aku butuh arah, dan tetap bertahan bersamaku saat aku meragukan diriku sendiri. jika aku diberi kesempatan untuk hidup lagi, aku tetap berharap suatu hari, entah bagaimana, aku akan menemukanmu lagi dan lagi.💖</p>
+  `;
+  document.getElementById("sliderSection").style.display="block";
+
+});
+
+/* CONFETTI */
+function confettiRain(){
+  const emojis=["💖","💕","✨","🤍","💘"];
+  for(let i=0;i<50;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+    c.style.left=Math.random()*100+"%";
+    c.style.fontSize=(15+Math.random()*20)+"px";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3000);
+  }
+}
+
+</script>
+
+</body>
+</html>
